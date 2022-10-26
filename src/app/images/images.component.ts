@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-images',
-  templateUrl: './images.component.html',
-  styleUrls: ['./images.component.css']
+  templateUrl: './images.component.html'
 })
 export class ImagesComponent implements OnInit {
 

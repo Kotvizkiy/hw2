@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-materialize',
-  templateUrl: './materialize.component.html',
-  styleUrls: ['./materialize.component.css']
+  templateUrl: './materialize.component.html'
 })
 export class MaterializeComponent implements OnInit {
 
