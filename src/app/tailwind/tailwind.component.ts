@@ -10,6 +10,7 @@ export class TailwindComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('tailwind')
   }
 
 }
