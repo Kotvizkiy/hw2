@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { TailwindComponent } from './tailwind/tailwind.component';
 import { MaterializeComponent } from './materialize/materialize.component';
+import { ImagesComponent } from './images/images.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BootstrapComponent,
     TailwindComponent,
-    MaterializeComponent
+    MaterializeComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,
