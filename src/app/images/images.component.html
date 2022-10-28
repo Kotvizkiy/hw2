@@ -1,11 +1,16 @@
-<div class="container max-w-[992px] mx-auto flex justify-around">
-    <button
-        (click)="prevHandle($event)"
-        class="border-solid px-2 m-3 py-1 border border-white rounded-l-lg bg-red-500  hover:bg-red-600">&#60;&#60;Prev</button>
-    <div>
-        <img class="w-100%" border-solid border-white [src]="currentScr" alt={{currentAlt}}>
-    </div>
-    <button
-        (click)="nextHandle($event)"
-        class="border-solid px-2 m-3 py-1 border border-white rounded-r-lg bg-red-500  hover:bg-red-600">Next&#62;&#62;</button>
+<div tabindex="0" #imgContainer class="container border-2 p-4  rounded-3xl  
+    mb-5 max-w-[992px] mx-auto flex justify-around bg-opacity-30" 
+     (keyup.n)="nextHandle($event)" (focus)="imgFocusShow()" (blur)="imgBlurShow()" (keyup.p)="prevHandle($event)" (keyup.N)="nextHandle($event)"  >  
+    <button (click)="prevHandle($event)" (focus)="imgFocusShow()"(blur)="imgBlurShow()"
+        class="w-20 border-solid px-2 m-3 py-1 border border-white rounded-l-lg bg-red-500  hover:bg-red-600">
+        &#60;&#60;<span #prevkey class="border p-1 rounded-sm invisible">p</span>
+    </button>
+        <div class="flex grow items-center justify-center col" style="height: 50vw; position:relative">
+            <img class="min-w-full " border-solid border-white [src]="currentScr" alt={{currentAlt}}
+            (click)="imgClicked($event)">
+        </div>
+    <button (click)="nextHandle($event)" (focus)="imgFocusShow()" (blur)="imgBlurShow()" 
+        class="border-solid px-2 m-3 py-1 border border-white rounded-r-lg bg-red-500  hover:bg-red-600">
+        <span  #nextkey class="border p-1 rounded-sm invisible">n</span>&#62;&#62;
+    </button>
 </div>
