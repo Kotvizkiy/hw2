@@ -6,17 +6,6 @@ import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
-  @ViewChild('imgContainer') 
-  imgContainer!: ElementRef  
-  ngAfterViewInit() {
-  }
-
-  @ViewChild('prevkey') 
-  prev!: ElementRef  
-
-  @ViewChild('nextkey') 
-  next!: ElementRef  
-
   constructor() {
    }
 
@@ -43,19 +32,11 @@ export class ImagesComponent implements OnInit {
   }
 
   imgFocusShow(){
-    if (this.imgfocus) return;
-    (this.imgContainer.nativeElement as HTMLElement).classList.add('bg-black');
-    (this.prev.nativeElement as HTMLElement).classList.remove('invisible');
-    (this.next.nativeElement as HTMLElement).classList.remove('invisible');
-    this.imgfocus = true;
+    if (!this.imgfocus) this.imgfocus = true;
   }
 
   imgBlurShow(){
-      if (this.imgfocus)
-      (this.imgContainer.nativeElement as HTMLElement).classList.remove('bg-black');
-      (this.prev.nativeElement as HTMLElement).classList.add('invisible');
-      (this.next.nativeElement as HTMLElement).classList.add('invisible');
-        this.imgfocus = false;
+      if (this.imgfocus) this.imgfocus = false;
    }
 
   imgClicked(e:MouseEvent){

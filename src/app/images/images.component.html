@@ -1,9 +1,10 @@
 <div tabindex="0" #imgContainer class="container border-2 p-4  rounded-3xl  
     mb-5 max-w-[992px] mx-auto flex justify-around bg-opacity-30" 
-     (keyup.n)="nextHandle($event)" (focus)="imgFocusShow()" (blur)="imgBlurShow()" (keyup.p)="prevHandle($event)" (keyup.N)="nextHandle($event)"  >  
+     (keyup.n)="nextHandle($event)" (focus)="imgFocusShow()" (blur)="imgBlurShow()" (keyup.p)="prevHandle($event)" (keyup.N)="nextHandle($event)" 
+     [class.bg-black]="imgfocus" >  
     <button (click)="prevHandle($event)" (focus)="imgFocusShow()"(blur)="imgBlurShow()"
         class="w-20 border-solid px-2 m-3 py-1 border border-white rounded-l-lg bg-red-500  hover:bg-red-600">
-        &#60;&#60;<span #prevkey class="border p-1 rounded-sm invisible">p</span>
+        &#60;&#60;<span #prevkey class="border p-1 rounded-sm" [class.invisible]="!imgfocus">p</span>
     </button>
         <div class="flex grow items-center justify-center col" style="height: 50vw; position:relative">
             <img class="min-w-full " border-solid border-white [src]="currentScr" alt={{currentAlt}}
@@ -11,6 +12,6 @@
         </div>
     <button (click)="nextHandle($event)" (focus)="imgFocusShow()" (blur)="imgBlurShow()" 
         class="border-solid px-2 m-3 py-1 border border-white rounded-r-lg bg-red-500  hover:bg-red-600">
-        <span  #nextkey class="border p-1 rounded-sm invisible">n</span>&#62;&#62;
+        <span  #nextkey class="border p-1 rounded-sm"  [class.invisible]="!imgfocus">n</span>&#62;&#62;
     </button>
 </div>

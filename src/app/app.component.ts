@@ -5,5 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'hw2';
+
+  bootstrap = true;
+  tailwind = false;
+  materialize = false;
+
 }
